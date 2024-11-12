@@ -69,15 +69,67 @@ section {
 }
 
 /* Contenedores de proyectos y contactos */
+.contactos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
 .contacto-container {
-    background-color: var(--fondo-oscuro);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 1rem;
+    position: relative;
+}
+
+.red-social {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
     text-align: center;
-    width: 30%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    background-color: var(--morado-claro);
+}
+
+.red-social img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.red-social:hover {
+    transform: scale(1.1);
+}
+
+/* Tooltip para mostrar el nombre de la red social */
+.tooltip {
+    visibility: hidden;
+    width: 100px;
+    background-color: var(--fondo-morado);
     color: var(--texto-claro);
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.red-social:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo para el correo electrónico */
+.correo {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--morado-acento);
 }
 
 .proyecto-container {
@@ -127,18 +179,6 @@ section {
 
 .btn-ver-proyecto:hover {
     background-color: var(--morado-acento);
-}
-
-.red-social {
-    width: 40px;
-    height: 40px;
-    background-color: var(--morado-claro);
-    margin: 0.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--fondo-oscuro);
 }
 
 .sobre-mi {
