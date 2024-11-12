@@ -1,4 +1,13 @@
-/* Estilos básicos para la estructura */
+/* Paleta de colores en tonos negros y morados */
+:root {
+    --fondo-oscuro: #1b1b2f;
+    --fondo-morado: #3f3d56;
+    --morado-claro: #6a67ce;
+    --morado-acento: #c7c5f4;
+    --texto-claro: #e4e4e4;
+}
+
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,27 +15,40 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-claro);
 }
 
+/* Header y navegación */
 header {
     width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--fondo-morado);
     padding: 1rem;
     text-align: center;
 }
 
 header nav a {
-    color: white;
+    color: var(--texto-claro);
     margin: 0 1rem;
     text-decoration: none;
+    font-weight: bold;
 }
 
+header nav a:hover {
+    color: var(--morado-acento);
+}
+
+/* Secciones */
 section {
     width: 80%;
     margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--fondo-morado);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Estilos de cada sección específica */
 .sobre-mi, .proyectos, .contactos {
     display: flex;
     flex-direction: row;
@@ -37,20 +59,39 @@ section {
 .foto-placeholder {
     width: 150px;
     height: 150px;
-    background-color: #ccc;
+    background-color: var(--morado-claro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fondo-oscuro);
+    font-weight: bold;
 }
 
+/* Contenedores de proyectos y contactos */
 .proyecto-container, .contacto-container {
-    border: 1px solid #ddd;
+    background-color: var(--fondo-oscuro);
+    border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
     text-align: center;
     width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--texto-claro);
+}
+
+.proyecto-container h3, .contacto-container p {
+    color: var(--morado-acento);
 }
 
 .red-social {
     width: 40px;
     height: 40px;
-    background-color: #ccc;
+    background-color: var(--morado-claro);
     margin: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fondo-oscuro);
 }
