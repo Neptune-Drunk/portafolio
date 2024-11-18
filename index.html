@@ -30,7 +30,7 @@
 </section>
 
 
-<section id="proyectos">
+<section id="proyectos" style="width: 100%; max-width: 1200px; margin: 0 auto;">
     <h2>Proyectos</h2>
     <div class="carrusel">
         <button class="carrusel-btn prev-btn">&#8249;</button>
@@ -48,29 +48,28 @@
                 <a href="https://proyecto-ds-5.vercel.app/" class="btn-ver-proyecto" target="_blank">Ver proyecto</a>
             </div>
             <div class="proyecto-container">
+                <img src="LogoZapanet.jpg" alt="Imagen de Proyecto 4" class="proyecto-imagen">
+                <h3>Logo Zapanet</h3>
+                <p>Creación de un Logo para una empresa ficticia</p>
+                <a href="LogoZapanet.jpg" class="btn-ver-proyecto" target="_blank">Ver Logo</a>
+            </div>
+            <div class="proyecto-container">
+                <img src="Proyecto5.png" alt="Imagen de Proyecto 5" class="proyecto-imagen">
+                <h3>Flyer de Zapanet</h3>
+                <p>Creación de flyer para la empresa ficticia Zapanet</p>
+                <a href="FlyerZapanet.jpg" class="btn-ver-proyecto" target="_blank">Ver Flyer</a>
+            </div>
+            <div class="proyecto-container">
+                <img src="Audio.jpg" alt="Cuña publicitaria de Zapanet" class="proyecto-imagen">
+                <h3>Cuña publicitaria de Zapanet</h3>
+                <p>Creación de una cuña publicitaria de una empresa ficticia</p>
+                <a href="CuñaPublicitariaZapanet.mp3" class="btn-ver-proyecto" target="_blank">Escuchar Audio</a>
+            </div>
+            <div class="proyecto-container">
                 <img src="Proyecto3.png" alt="Imagen de Proyecto 3" class="proyecto-imagen">
                 <h3>Video Downloader</h3>
                 <p>Un pequeño proyecto personal para la facil descarga de video y sonidos de Youtube.</p>
                 <a href="https://github.com/Neptune-Drunk/VidDownloader" class="btn-ver-proyecto" target="_blank">Ver proyecto</a>
-            </div>
-            <!-- Espacios adicionales -->
-            <div class="proyecto-container">
-                <img src="Proyecto4.png" alt="Imagen de Proyecto 4" class="proyecto-imagen">
-                <h3>Proyecto 4</h3>
-                <p>Descripción del cuarto proyecto aquí.</p>
-                <a href="#" class="btn-ver-proyecto" target="_blank">Ver proyecto</a>
-            </div>
-            <div class="proyecto-container">
-                <img src="Proyecto5.png" alt="Imagen de Proyecto 5" class="proyecto-imagen">
-                <h3>Proyecto 5</h3>
-                <p>Descripción del quinto proyecto aquí.</p>
-                <a href="#" class="btn-ver-proyecto" target="_blank">Ver proyecto</a>
-            </div>
-            <div class="proyecto-container">
-                <img src="Proyecto6.png" alt="Imagen de Proyecto 6" class="proyecto-imagen">
-                <h3>Proyecto 6</h3>
-                <p>Descripción del sexto proyecto aquí.</p>
-                <a href="#" class="btn-ver-proyecto" target="_blank">Ver proyecto</a>
             </div>
         </div>
         <button class="carrusel-btn next-btn">&#8250;</button>
@@ -96,6 +95,31 @@
     </div>
     <p class="correo">Correo: vejabarsebastian@gmail.com</p>
 </section>
-
 </body>
+<script>
+    const carruselItems = document.querySelector('.carrusel-items');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+
+    const updateCarrusel = () => {
+        const width = document.querySelector('.carrusel').offsetWidth;
+        carruselItems.style.transform = `translateX(-${currentIndex * width}px)`;
+    };
+
+    nextBtn.addEventListener('click', () => {
+        const totalItems = carruselItems.children.length;
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarrusel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        const totalItems = carruselItems.children.length;
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarrusel();
+    });
+
+    window.addEventListener('resize', updateCarrusel); // Actualiza el tamaño al cambiar la ventana
+    updateCarrusel(); // Asegúrate de que se ajuste al cargar la página
+</script>
 </html>

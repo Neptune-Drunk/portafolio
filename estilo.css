@@ -207,18 +207,36 @@ section {
 }
 
 /* Estilos del carrusel */
+/* Carrusel que muestra un proyecto a la vez */
+/* Ajustes para que el carrusel se vea correctamente */
 .carrusel {
     display: flex;
     align-items: center;
     position: relative;
-    overflow: hidden;
-    width: 100%;
+    overflow: hidden; /* Asegura que el contenido que exceda los límites no se vea */
+    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
+    height: auto; /* Ajusta automáticamente la altura al contenido */
 }
 
 .carrusel-items {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%; /* Se ajustará dinámicamente al tamaño del carrusel */
 }
+
+.proyecto-container {
+    flex: 0 0 100%; /* Cada proyecto ocupa el 100% del ancho del carrusel */
+    box-sizing: border-box; /* Incluye padding y bordes dentro del tamaño total */
+    text-align: center;
+    margin: 0; /* Quita márgenes adicionales para evitar desplazamientos no deseados */
+}
+.proyecto-container img {
+    max-width: 100%; /* Asegura que las imágenes no se desborden */
+    height: auto; /* Mantén la proporción de las imágenes */
+    border-radius: 10px;
+}
+
 
 .carrusel-btn {
     position: absolute;
@@ -230,8 +248,8 @@ section {
     font-size: 2rem;
     cursor: pointer;
     z-index: 1;
-    padding: 0.5rem;
-    border-radius: 50%;
+    padding: 1.5rem;
+    border-radius: 10%;
 }
 
 .carrusel-btn.prev-btn {
@@ -244,4 +262,13 @@ section {
 
 .carrusel-btn:hover {
     background-color: var(--morado-acento);
+}
+section {
+    width: 100%;
+    max-width: 1200px; /* Ajusta este valor según el diseño deseado */
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: var(--fondo-morado);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
