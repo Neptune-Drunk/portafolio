@@ -205,3 +205,43 @@ section {
     line-height: 1.5;
     color: var(--texto-claro);
 }
+
+/* Estilos del carrusel */
+.carrusel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carrusel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--morado-claro);
+    border: none;
+    color: var(--fondo-oscuro);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.carrusel-btn.prev-btn {
+    left: 10px;
+}
+
+.carrusel-btn.next-btn {
+    right: 10px;
+}
+
+.carrusel-btn:hover {
+    background-color: var(--morado-acento);
+}
